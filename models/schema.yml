@@ -56,13 +56,88 @@ sources:
      
       - name: adwords
         identifier: raw_gz_adwords
+        columns: 
+          - name: date_date
+            description: date
+            tests:
+              - not_null
+          - name: paid_source
+            description: paid
+          - name: campaign_key 
+            description: campaign
+          - name: campaing_name
+            description: name
+          - name: ads_cost
+            description: ads cost
+          - name: impression
+            description: impression
+          - name: click
+            description: click
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)"
+          
 
       - name: bing
         identifier: raw_gz_bing
+        columns: 
+          - name: date_date
+            description: date
+          - name: paid_source
+            description: paid
+          - name: campaign_key 
+            description: campaign
+          - name: campaing_name
+            description: name
+          - name: ads_cost
+            description: ads cost
+          - name: impression
+            description: impression
+          - name: click
+            description: click
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)"
 
       - name: criteo
         identifier: raw_gz_criteo
+        columns: 
+          - name: date_date
+            description: date
+          - name: paid_source
+            description: paid
+          - name: campaign_key 
+            description: campaign
+          - name: campaing_name
+            description: name
+          - name: ads_cost
+            description: ads cost
+          - name: impression
+            description: impression
+          - name: click
+            description: click
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)"
 
       - name: facebook
         identifier: raw_gz_facebook
+        columns: 
+          - name: date_date
+            description: date
+          - name: paid_source
+            description: paid
+          - name: campaign_key 
+            description: campaign
+          - name: campaing_name
+            description: name
+          - name: ads_cost
+            description: ads cost
+          - name: impression
+            description: impression
+          - name: click
+            description: click
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)"
 
