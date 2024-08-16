@@ -4,7 +4,7 @@ select
     ,round(sum(revenue),0) as revenue
     ,round(avg(revenue),1) as average_basket
     ,round(sum(margin),0) as margin
-    ,round(sum(operational_margin),0) as operational_margin
+    ,ifnull(round(sum(operational_margin),0),0) as operational_margin
     ,ROUND(SUM(purchase_cost),0) as purchase_cost 
     ,ROUND(SUM(shipping_fee),0) AS shipping_fee 
     ,ROUND(SUM(logcost),0) AS logcost 
