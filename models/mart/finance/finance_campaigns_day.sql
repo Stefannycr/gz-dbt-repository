@@ -1,9 +1,9 @@
 select
     f.date_date,
-    (operational_margin-ads_cost) as ads_margin,
+    (operational_margin-ifnull(ads_cost,0)) as ads_margin,
     f.average_basket,
     f.operational_margin,
-    c.ads_cost,
+    ifnull(c.ads_cost,0) as ads_cost,
     f.margin,
     f.purchase_cost,
     f.shipping_fee,
@@ -12,6 +12,7 @@ select
     f.quantity, 
     c.impression,
     c.clicks
+    
     
 from {{ref("finance_days")}} f
 left join {{ref("int_campaigns_day")}} c

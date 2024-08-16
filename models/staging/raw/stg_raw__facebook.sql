@@ -13,8 +13,8 @@ renamed as (
         paid_source,
         campaign_key,
         campgn_name as campaing_name,
-        CAST(ads_cost as float64) as ads_cost,
-        concat(date_date, '_', campaign_key) as date_campaing,
+        ifnull(CAST(ads_cost as float64),0) as ads_cost,
+        concat(date_date, '_', campaign_key) as date_campaign,
         impression,
         click
 
